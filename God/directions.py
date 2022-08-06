@@ -1,4 +1,6 @@
 from enum import Enum
+
+
 class Color(Enum):
     RIGHT = 1
     UP = 2

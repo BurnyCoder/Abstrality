@@ -1,5 +1,6 @@
 from God.beings import Beings
 
+
 class SpaceTime:
     def __init__(self, gods_thoughts):
         self.width = gods_thoughts.spacetime_width

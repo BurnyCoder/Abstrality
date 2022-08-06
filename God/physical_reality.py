@@ -1,5 +1,6 @@
 from God.spacetime import SpaceTime
 
+
 class PhysicalReality:
     def __init__(self, gods_thoughts):
         self.spacetime = SpaceTime(gods_thoughts)

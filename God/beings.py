@@ -1,7 +1,8 @@
 from God.component import Component
 from God.directions import *
 
-#todo collision detection
+
+# todo collision detection
 def action(self, beings, SuperMetaGod_message):
     if SuperMetaGod_message == "d":
         self.components["x"] = self.components["x"] + 1
@@ -12,19 +13,23 @@ def action(self, beings, SuperMetaGod_message):
     if SuperMetaGod_message == "s":
         self.components["y"] = self.components["y"] + 1
 
+
 class Fed:
     def __init__(self, base_line, current):
         self.base_line = base_line
         self.current = current
         self.hunger = self.base_line - self.current
 
+
 def starve(fed):
     fed.current = fed.current - 0.05
     fed.hunger = fed.base_line - fed.current
 
+
 def eat(fed):
     fed.current = fed.current + 0.5
     fed.hunger = fed.base_line - fed.current
+
 
 class Beings:
     beings = []
@@ -63,14 +68,13 @@ class Beings:
         for being in self.beings:
             being.update(self.beings)
 
-            #todo optimize by having player segmented from other beings so that we dont have to search from him each iteration
+            # todo optimize by having player segmented from other beings so that we dont have to search from him each iteration
             if being.components["is_player"] == True:
                 being.trigger_update_transformations["action"](being, beings, SuperMetaGod_message)
 
     def render(self, map):
         for being in self.beings:
-            map[being.components["y"]][being.components["x"]]=being.components["look"]
+            map[being.components["y"]][being.components["x"]] = being.components["look"]
             if being.components["is_player"] == True:
                 food = being.components["fed"].current
                 map.append(f"Food = {food}")
-

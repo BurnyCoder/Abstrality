@@ -9,5 +9,6 @@ def main() -> None:
         god.render()
         SuperMetaGod_message = input()
 
+
 if __name__ == "__main__":
     main()

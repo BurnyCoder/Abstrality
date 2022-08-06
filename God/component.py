@@ -5,6 +5,7 @@ class Message:
         self.what = what
         self.where = where
 
+
 class Component:
     def __init__(self, components, update_transformations, auto_update_transformations):
         self.components = components
